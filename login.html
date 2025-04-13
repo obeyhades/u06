@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <script type="module" src="/src/main.ts"></script>
+</head>
+
+<body class="flex min-h-screen">
+    <div class="w-1/2 flex flex-col justify-center items-center bg-white">
+        <h1 class="text-2xl font-bold text-center">Handel Money<br>Differently</h1>
+    </div>
+
+    <div class="w-1/2 flex justify-center items-center bg-gradient-to-br from-orange-300 to-gray-500">
+        <div class="bg-white p-10 rounded-xl shadow-md w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">Log in to your account</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block mb-1 text-sm font-medium">Email</label>
+                    <input type="email" placeholder="Enter email" class="w-full p-2 border border-gray-300 rounded" />
+                </div>
+                <div>
+                    <label class="block mb-1 text-sm font-medium">Password</label>
+                    <input type="password" placeholder="Enter password"
+                        class="w-full p-2 border border-gray-300 rounded" />
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+                    Log in
+                </button>
+            </form>
+            <p class="text-center text-sm text-gray-600 mt-4">
+                Don’t have an account?
+                <a href="index.html" class="text-blue-600 hover:underline">Create one</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
