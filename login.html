@@ -10,25 +10,26 @@
 
 <body class="flex min-h-screen">
     <div class="w-1/2 flex flex-col justify-center items-center bg-white">
-        <h1 class="text-2xl font-bold text-center">Handel Money<br>Differently</h1>
+        <h1 class="text-2xl font-bold text-center">Handle Money<br>Differently</h1>
     </div>
 
     <div class="w-1/2 flex justify-center items-center bg-gradient-to-br from-orange-300 to-gray-500">
         <div class="bg-white p-10 rounded-xl shadow-md w-full max-w-md">
             <h2 class="text-2xl font-bold mb-6 text-center">Log in to your account</h2>
-            <form class="space-y-4">
+           
+            <form id="loginform" class="space-y-4">
                 <div>
-                    <label class="block mb-1 text-sm font-medium">Email</label>
-                    <input type="email" placeholder="Enter email" class="w-full p-2 border border-gray-300 rounded" />
+                    <label class="block mb-1 text-sm font-medium">Username</label>
+                    <input id="username-input" type="text" placeholder="Enter username" class="w-full p-2 border border-gray-300 rounded" required/>
                 </div>
 
 
                 <div>
                     <label class="block mb-1 text-sm font-medium">Password</label>
-                    <input type="password" placeholder="Enter password"
-                        class="w-full p-2 border border-gray-300 rounded" >
+                    <input id="password-input" type="password" placeholder="Enter password"
+                        class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+                <button id="submit-btn" type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition" >
                     Log in
                 </button>
             </form>
