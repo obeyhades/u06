@@ -40,4 +40,3 @@ document.getElementById("registerform")?.addEventListener("submit", async (e) =>
 
 })
 
-//document.getElementById("submit-btn")?.addEventListener("click")

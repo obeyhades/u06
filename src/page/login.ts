@@ -27,11 +27,13 @@ document.getElementById("loginform")?.addEventListener("submit", async (e) => {
         const data = await response.json();
         console.log("JAG FUNKAR", data);
         
-        
+        document.cookie = data.id
+
      } catch (error) {
         console.error(error)
      }
 
+
+
 })
 
-//document.getElementById("submit-btn")?.addEventListener("click")
