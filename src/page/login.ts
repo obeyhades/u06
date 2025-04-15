@@ -1,18 +1,14 @@
 import "../style.css"
 
-document.getElementById("registerform")?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    
-    const url = `${import.meta.env.VITE_BACKEND_URL}/user`;
+document.getElementById("loginform")?.addEventListener("submit", async (e) => {
+    e.preventDefault()
 
-    const username = (document.getElementById("usernameReg") as HTMLInputElement).value
-    const email =  (document.getElementById("emailReg") as HTMLInputElement).value
-    const password = (document.getElementById("passwordReg") as HTMLInputElement).value
+    const url = `${import.meta.env.VITE_BACKEND_URL}/user/login`;
 
-    console.log(username);
-    
-    
-    try {        
+    const username = (document.getElementById("username-input") as HTMLInputElement).value
+    const password = (document.getElementById("password-input") as HTMLInputElement).value
+
+     try {
         const response = await fetch(url,{
             method: "POST",
             headers: {
@@ -20,13 +16,9 @@ document.getElementById("registerform")?.addEventListener("submit", async (e) =>
             },
             body: JSON.stringify({
                 username,
-                email,
-                password,
+                password
             })
         });
-        console.log('gfgdf');
-        
-        console.log(response);
         
         if (!response.ok) {
             throw new Error(
@@ -34,6 +26,8 @@ document.getElementById("registerform")?.addEventListener("submit", async (e) =>
         }
         const data = await response.json();
         console.log("JAG FUNKAR", data);
+        
+        
      } catch (error) {
         console.error(error)
      }
