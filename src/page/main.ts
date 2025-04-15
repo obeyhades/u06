@@ -1,4 +1,4 @@
-import './style.css'
+import "../style.css"
 
 document.getElementById("loginform")?.addEventListener("submit", async (e) => {
     e.preventDefault()
