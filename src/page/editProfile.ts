@@ -1,22 +1,32 @@
 import "../style.css"
 
-document.getElementById("editProfileForm")?.addEventListener("submit", async (e) => {
+function getCookie(cookie: string): string | null {
+    const match = document.cookie.match(new RegExp('(^| )' + cookie + '=([^;]+)'));
+    return match ? match[2] : null;
+}
+  
+  document.getElementById("editProfileForm")?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const id = document.cookie
-    const url = `${import.meta.env.VITE_BACKEND_URL}/user4/${id}`;
+  
+    const userId = getCookie("userId");
+    if (!userId) {
+      alert("User ID not found in cookies.");
+      return;
+    }
+    const url = `${import.meta.env.VITE_BACKEND_URL}/user/${userId}`;
+
 
     const username = (document.getElementById("usernameEdit") as HTMLInputElement).value
     const email =  (document.getElementById("emailEdit") as HTMLInputElement).value
     const password = (document.getElementById("passwordEdit") as HTMLInputElement).value
+   
 
-    console.log(username);
-    
-    
     try {        
         const response = await fetch(url,{
             method: "PUT",
             headers: {
                 "Content-Type": "application/json" 
+
             },
             body: JSON.stringify({
                 username,

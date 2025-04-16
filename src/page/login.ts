@@ -19,18 +19,22 @@ document.getElementById("loginform")?.addEventListener("submit", async (e) => {
                 password
             })
         });
+        const data = await response.json();
         
         if (!response.ok) {
-            throw new Error(
-                `Something went wrong trying to fetch data: ${response.status}`)
+            throw new Error(data.message)
         }
-        const data = await response.json();
-        console.log("JAG FUNKAR", data);
+
+        document.cookie = `userId=${data.user_id};`;
         
-        document.cookie = data.id
+        
+       window.location.href = `/editprofile.html`
+
 
      } catch (error) {
         console.error(error)
+        
+       window.alert(error)
      }
 
 
