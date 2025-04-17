@@ -47,3 +47,37 @@ function getCookie(cookie: string): string | null {
 
 })
 
+document.getElementById("deleteBtn")?.addEventListener("click", async () => {
+    const userId = getCookie("userId");
+    if (!userId) {
+      alert("User ID not found in cookies.");
+      return;
+    }
+  
+    const confirmDelete = confirm("Are you sure you want to delete your account?");
+    if (!confirmDelete) return;
+  
+    const url = `${import.meta.env.VITE_BACKEND_URL}/user/${userId}`;
+  
+    try {
+      const response = await fetch(url, {
+        method: "DELETE",
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Something went wrong trying to delete user: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log("ACCOUNT DELETED:", data);
+  
+      document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  
+      
+      window.location.href = "/login.html"; // Ändra till din login/signup-sida
+    } catch (error) {
+      console.error(error);
+      alert("Failed to delete your account. Try again.");
+    }
+  });
+  
