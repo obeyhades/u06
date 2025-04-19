@@ -28,7 +28,7 @@ document.getElementById("loginform")?.addEventListener("submit", async (e) => {
         document.cookie = `userId=${data.user_id};`;
         
         
-       window.location.href = `/editprofile.html`
+       window.location.href = `/mainPage.html`
 
 
      } catch (error) {
@@ -36,8 +36,6 @@ document.getElementById("loginform")?.addEventListener("submit", async (e) => {
         
        window.alert(error)
      }
-
-
 
 })
 
