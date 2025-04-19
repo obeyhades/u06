@@ -1,4 +1,4 @@
-import "../style.css"
+import "../style.css";
 
 document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
   const url = `${import.meta.env.VITE_BACKEND_URL}/user`;
@@ -7,7 +7,7 @@ document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     });
 
@@ -18,14 +18,13 @@ document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
     }
 
     const usersDiv = document.getElementById("usersList");
-    usersDiv!.innerHTML = ""; 
+    usersDiv!.innerHTML = "";
 
     data.forEach((user: any) => {
       const userElement = document.createElement("p");
       userElement.textContent = `👤 ${user.username} - ${user.email}`;
       usersDiv?.appendChild(userElement);
     });
-
   } catch (error) {
     console.error(error);
     window.alert("Something went wrong when trying to fetch user");

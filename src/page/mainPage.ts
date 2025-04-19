@@ -1,10 +1,9 @@
-import "../style.css"
+import "../style.css";
 
 const totalAmount = document.getElementById("totalAmount") as HTMLElement;
 const addIncomeBtn = document.getElementById("addIncomeBtn");
 
 let income = Number(localStorage.getItem("income")) || 0;
-
 
 totalAmount.textContent = `$${income}`;
 
