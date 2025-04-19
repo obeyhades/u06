@@ -14,11 +14,11 @@ document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.message || "Kunde inte hämta användare");
+      throw new Error(data.message || "Cound not get user");
     }
 
     const usersDiv = document.getElementById("usersList");
-    usersDiv!.innerHTML = ""; // Rensa innan du lägger till nya
+    usersDiv!.innerHTML = ""; 
 
     data.forEach((user: any) => {
       const userElement = document.createElement("p");
@@ -28,6 +28,6 @@ document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
 
   } catch (error) {
     console.error(error);
-    window.alert("Något gick fel när användare skulle hämtas.");
+    window.alert("Something went wrong when trying to fetch user");
   }
 });

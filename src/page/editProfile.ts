@@ -74,7 +74,7 @@ document.getElementById("deleteBtn")?.addEventListener("click", async () => {
       document.cookie = "userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   
       
-      window.location.href = "/login.html"; // Ändra till din login/signup-sida
+      window.location.href = "/login.html";
     } catch (error) {
       console.error(error);
       alert("Failed to delete your account. Try again.");

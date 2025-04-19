@@ -9,7 +9,7 @@ document.getElementById("registerform")?.addEventListener("submit", async (e) =>
     const email =  (document.getElementById("emailReg") as HTMLInputElement).value
     const password = (document.getElementById("passwordReg") as HTMLInputElement).value
 
-    console.log(username);
+    
     
     
     try {        
