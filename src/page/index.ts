@@ -22,7 +22,7 @@ document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
 
     data.forEach((user: any) => {
       const userElement = document.createElement("p");
-      userElement.textContent = `👤 ${user.username} - ${user.email}`;
+      userElement.textContent = `${user.username} - ${user.email}`;
       usersDiv?.appendChild(userElement);
     });
   } catch (error) {
