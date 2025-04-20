@@ -2,7 +2,7 @@ import "../style.css";
 
 document.getElementById("showUsersBtn")?.addEventListener("click", async () => {
   const url = `${import.meta.env.VITE_BACKEND_URL}/user`;
-
+  
   try {
     const response = await fetch(url, {
       method: "GET",
