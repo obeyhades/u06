@@ -16,3 +16,8 @@ As a user, you will also be able to edit your profile or delete it if you wish.
 ##  Note
 
 This project is still in progress, which means it is not fully completed yet.
+
+
+## Link
+
+https://www.figma.com/proto/Fn5ypeW0enw40zCh4lSSvM/Untitled?node-id=0-1&t=qcqfizrUCVfz3Pj2-1
